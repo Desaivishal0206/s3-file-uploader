@@ -26,11 +26,11 @@ jobs:
         defaults:
             run:
                 shell: bash
-                working-directory: s3-file-uploader/terraform
+                working-directory: ./terraform
         steps:
         - name: Package Lambda Function
           run: |
-              cd ..s3-file-uploader/lambda
+              cd ../lambda
               zip -r9 lambda_function_payload.zip lambda_function.py
               mv lambda_function_payload.zip ../terraform/
               cd ../terraform
@@ -45,7 +45,7 @@ jobs:
 
         - name: Terraform Init
           id: init
-          run: terraform init -backend-config "bucket=$BUCKET_TF_STATE"
+          run: terraform init -backend-config "bucket=$BUCKET_TF"
 
         - name: Terraform Format
           id: fmt
