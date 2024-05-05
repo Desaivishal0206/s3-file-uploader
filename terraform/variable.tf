@@ -1,13 +1,7 @@
-variable "region" {
-  description = "AWS region"
-  type        = string
-  default     = "us-east-1"
-}
-
 variable "s3_bucket_prefix" {
   description = "The prefix name of the S3 buckets for uploads and processed files"
   type        = string
-  default     = "cloudcore-s3-file"
+  default     = "file-manager-s3-file"
 }
 
 variable "lambda_function_name" {
@@ -31,5 +25,5 @@ variable "lambda_runtime" {
 variable "lambda_source_file" {
   description = "Path to the Lambda function's source code zip file"
   type        = string
-  default     = "./lambda_function_payload.zip"
+  default     = "s3-file-uploader/lambda_function_payload.zip"
 }
