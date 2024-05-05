@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "bucket_in" {
   bucket = "${var.s3_bucket_prefix}-in"
 }
 
@@ -17,7 +17,7 @@ resource "aws_s3_bucket_cors_configuration" "example" {
 }
 
 //////
-resource "aws_s3_bucket" "example" {
+resource "aws_s3_bucket" "bucket_out" {
   bucket = "${var.s3_bucket_prefix}-out"
 }
 
