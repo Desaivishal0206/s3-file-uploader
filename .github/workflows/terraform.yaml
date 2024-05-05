@@ -26,14 +26,15 @@ jobs:
                 shell: bash
                 working-directory: ./terraform
         steps:
+        - name: Checkout source code 
+          uses: actions/checkout@v4
         - name: Package Lambda Function
           run: |
               cd ../lambda
               zip -r9 lambda_function_payload.zip lambda_function.py
               mv lambda_function_payload.zip ../terraform/
               cd ../terraform
-        - name: Checkout source code 
-          uses: actions/checkout@v4
+        
 
         - name: Package Lambda Function
           run:  cd ../lambda 
