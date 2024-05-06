@@ -2,7 +2,7 @@ resource "aws_s3_bucket" "bucket_in" {
   bucket = "${var.s3_bucket_prefix}-in"
 }
 
-resource "aws_s3_bucket_cors_configuration" "example" {
+resource "aws_s3_bucket_cors_configuration" "bucket_in_cors" {
   bucket = aws_s3_bucket.bucket_out.id
 
   cors_rule {
