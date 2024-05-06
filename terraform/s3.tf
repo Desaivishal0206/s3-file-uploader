@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "bucket_in" {
 }
 
 resource "aws_s3_bucket_cors_configuration" "bucket_in_cors" {
-  bucket = aws_s3_bucket.bucket_out.id
+  bucket = aws_s3_bucket.bucket_in.id
 
   cors_rule {
     allowed_headers = ["*"]
